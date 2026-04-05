@@ -40,8 +40,8 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="pages\catalog.html" class="btn btn-cyan btn-lg">Shop Now →</a>
-            <a href="pages\catalog.html" class="btn btn-glass btn-lg">Browse Products</a>
+            <a href="/Poultrymart/pages/catalog.html" class="btn btn-cyan btn-lg">Shop Now →</a>
+            <a href="/Poultrymart/pages/catalog.html" class="btn btn-glass btn-lg">Browse Products</a>
           </div>
         </div>
 
@@ -112,7 +112,7 @@
 
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="section-title mb-0">Featured Products</h2>
-        <a href="pages\catalog.html" class="btn btn-outline-light btn-sm">View All →</a>
+        <a href="/Poultrymart/pages/catalog.html" class="btn btn-outline-light btn-sm">View All →</a>
       </div>
 
       <!-- THIS IS THE IMPORTANT CHANGE -->
@@ -129,7 +129,7 @@
         Get 10% off your first order with code 
         <span class="promo-code">WELCOME10</span>
       </p>
-      <a href="pages/catalog.html" class="btn btn-cta btn-lg mt-3">Start Shopping</a>
+      <a href="/Poultrymart/pages/catalog.html" class="btn btn-cta btn-lg mt-3">Start Shopping</a>
     </div>
   </section>
 
@@ -147,7 +147,7 @@
       .then(res => res.text())
       .then(data => document.getElementById("navbar").innerHTML = data);
 
-    fetch("components/footer.html")
+    fetch("/Poultrymart/components/footer.html")
       .then(res => res.text())
       .then(data => document.getElementById("footer-container").innerHTML = data);
   </script>
