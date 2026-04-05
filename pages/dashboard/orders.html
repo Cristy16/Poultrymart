@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management | PoultryMart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="bg-dark text-white overflow-hidden">
+    <div class="d-flex vh-100">
+        <div id="sidebar-container"></div>
+
+        <main class="flex-grow-1 overflow-auto">
+            <div class="d-lg-none p-3 border-bottom border-secondary border-opacity-10 d-flex justify-content-between align-items-center bg-dark sticky-top">
+                <span class="fw-bold text-cyan">PoultryMart</span>
+                <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+            </div>
+
+            <div class="p-4 p-lg-5">
+                <header class="mb-4">
+                    <h2 class="fw-bold mb-1">Order Management</h2>
+                    <p class="text-white-50">Manage customer orders and fulfillment</p>
+                </header>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="input-group glass-panel border-0 rounded-3 overflow-hidden">
+                            <span class="input-group-text bg-transparent border-0 text-white-50 ps-3">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" id="orderSearch" class="form-control bg-transparent border-0 text-white py-2" placeholder="Search by order number...">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <select id="statusFilter" class="form-select glass-panel border-0 text-white py-2 rounded-3">
+                            <option value="all">All Statuses</option>
+                            <option value="pending" selected>Pending</option>
+                            <option value="packed">Packed</option>
+                            <option value="out-for-delivery">Out for Delivery</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="ordersContainer">
+                    <div class="glass-panel p-4 rounded-4 mb-4 border-start border-warning border-4 order-card" data-status="pending" data-id="PM-2026-003">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-0">PM-2026-003</h5>
+                                <small class="text-white-50">3/14/2026, 10:20:00 PM</small>
+                            </div>
+                            <span class="badge bg-warning bg-opacity-10 text-warning rounded-pill px-3">Pending</span>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="small fw-bold text-white-50 mb-2">Items:</p>
+                            <div class="bg-dark bg-opacity-50 p-3 rounded-3 d-flex align-items-center gap-3">
+                                <img src="https://placehold.co/60x60/222/cyan?text=Chicken" class="rounded-3" alt="product">
+                                <div>
+                                    <p class="mb-0 fw-bold">Chicken Breast (Boneless)</p>
+                                    <small class="text-white-50">Qty: 1 × 1kg</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-4">
+                                <p class="small fw-bold text-white-50 mb-1">Delivery Address</p>
+                                <p class="small mb-0">789 Del Rosario Street, Tabaco City, Albay</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="small fw-bold text-white-50 mb-1">Delivery Schedule</p>
+                                <p class="small mb-0">3/15/2026<br>9:00 AM - 11:00 AM</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="small fw-bold text-white-50 mb-1">Payment Method</p>
+                                <p class="small mb-0">COD</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top border-secondary border-opacity-25">
+                            <div>
+                                <small class="text-white-50 d-block">Estimated Total</small>
+                                <h4 class="fw-bold text-cyan mb-0">₱320.00</h4>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-light border-secondary border-opacity-25 rounded-3 px-3 py-2" onclick="location.href='packing.html'">
+                                    <i class="bi bi-scale me-2"></i> Input Weights
+                                </button>
+                                <select class="form-select glass-panel border-0 text-white w-auto rounded-3">
+                                    <option value="pending" selected>Pending</option>
+                                    <option value="packed">Packed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-white-50 small px-2">
+                    Showing <span class="text-white fw-bold" id="orderCount">1</span> of 6 orders
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/dashboard-logic.js"></script>
+    
+    <script>
+        // Simple search and filter logic
+        const searchInput = document.getElementById('orderSearch');
+        const statusFilter = document.getElementById('statusFilter');
+        const orderCards = document.querySelectorAll('.order-card');
+        const orderCountDisplay = document.getElementById('orderCount');
+
+        function filterOrders() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedStatus = statusFilter.value;
+            let visibleCount = 0;
+
+            orderCards.forEach(card => {
+                const orderId = card.getAttribute('data-id').toLowerCase();
+                const cardStatus = card.getAttribute('data-status');
+                
+                const matchesSearch = orderId.includes(searchTerm);
+                const matchesStatus = selectedStatus === 'all' || cardStatus === selectedStatus;
+
+                if (matchesSearch && matchesStatus) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            orderCountDisplay.innerText = visibleCount;
+        }
+
+        searchInput.addEventListener('keyup', filterOrders);
+        statusFilter.addEventListener('change', filterOrders);
+    </script>
+</body>
+</html>

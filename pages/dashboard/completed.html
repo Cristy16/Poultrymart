@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed | PoultryMart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="bg-dark text-white overflow-hidden">
+    <div class="d-flex vh-100">
+        <div id="sidebar-container"></div>
+        <main class="flex-grow-1 overflow-auto">
+            <div class="d-lg-none p-3 border-bottom border-secondary border-opacity-10 d-flex justify-content-between align-items-center bg-dark sticky-top">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-cyan p-1 rounded-circle" style="width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-egg-fried text-dark" style="font-size: 0.8rem;"></i>
+                    </div>
+                    <span class="fw-bold small">PoultryMart</span>
+                </div>
+                <button class="btn btn-dark border-secondary border-opacity-25" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+            </div>
+
+            <div class="p-4 p-lg-5">
+                <header class="mb-5">
+                    <h2 class="fw-bold mb-1">Completed</h2>
+                    <p class="text-white small">History of deliveries for today</p>
+                </header>
+
+                <div class="glass-panel rounded-4 overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0 align-middle border-0">
+                            <thead class="bg-secondary bg-opacity-10">
+                                <tr>
+                                    <th class="p-3 border-0 small text-white text-nowrap">ORDER ID</th>
+                                    <th class="p-3 border-0 small text-white text-nowrap">CUSTOMER</th>
+                                    <th class="p-3 border-0 small text-white text-nowrap">TIME</th>
+                                    <th class="p-3 border-0 small text-white text-nowrap">AMOUNT</th>
+                                    <th class="p-3 border-0 small text-white text-end text-nowrap">STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-3 border-secondary border-opacity-10 small fw-bold">#PM-9918</td>
+                                    <td class="p-3 border-secondary border-opacity-10 small">Maria Clara</td>
+                                    <td class="p-3 border-secondary border-opacity-10 small text-white-50">2:15 PM</td>
+                                    <td class="p-3 border-secondary border-opacity-10 small fw-bold">₱420.00</td>
+                                    <td class="p-3 border-secondary border-opacity-10 text-end">
+                                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3">Delivered</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/dashboard-logic.js"></script>
+</body>
+</html>

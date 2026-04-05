@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Map | PoultryMart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="bg-dark text-white overflow-hidden">
+    <div class="d-flex vh-100">
+        <div id="sidebar-container"></div>
+        <main class="flex-grow-1 overflow-auto">
+            <div class="d-lg-none p-3 border-bottom border-secondary border-opacity-10 d-flex justify-content-between align-items-center bg-dark sticky-top">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-cyan p-1 rounded-circle" style="width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-egg-fried text-dark" style="font-size: 0.8rem;"></i>
+                    </div>
+                    <span class="fw-bold small">PoultryMart</span>
+                </div>
+                <button class="btn btn-dark border-secondary border-opacity-25" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+            </div>
+
+            <div class="p-4 p-lg-5">
+                <header class="mb-5">
+                    <h2 class="fw-bold mb-1">Route Map</h2>
+                    <p class="text-white small text-cyan">Optimized delivery route for today's orders</p>
+                </header>
+
+                <div class="glass-panel d-flex flex-column align-items-center justify-content-center rounded-4 border-opacity-10" style="min-height: 450px;">
+                    <div class="stat-icon bg-info bg-opacity-10 text-info mb-4" style="width: 80px; height: 80px; font-size: 2rem;">
+                        <i class="bi bi-map"></i>
+                    </div>
+                    <h4 class="fw-bold text-white text-center">Route Map View</h4>
+                    <p class="text-muted text-center px-4" style="max-width: 400px;">
+                        This interface displays an optimized delivery route map with turn-by-turn navigation.
+                    </p>
+                    <div class="mt-3 py-2 px-4 rounded-pill border border-info border-opacity-25 text-info small">
+                        <i class="bi bi-geo-fill me-2"></i> GPS Tracking Active
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/dashboard-logic.js"></script>
+</body>
+</html>

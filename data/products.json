@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Whole Chicken - Farm Fresh",
+    "category": "Whole Birds",
+    "price": 216,
+    "rating": 4.8,
+    "reviews": 45,
+    "image": "images/chicken1.jpg",
+    "badge": "Featured"
+  },
+  {
+    "id": 2,
+    "name": "Chicken Drumsticks",
+    "category": "Prime Cuts",
+    "price": 100,
+    "rating": 4.8,
+    "reviews": 41,
+    "image": "images/drumsticks.jpg",
+    "badge": "Featured"
+  }
+]

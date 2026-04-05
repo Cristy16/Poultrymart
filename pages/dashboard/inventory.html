@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management | PoultryMart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="bg-dark text-white overflow-hidden">
+    <div class="d-flex vh-100">
+        <div id="sidebar-container"></div>
+
+        <main class="flex-grow-1 overflow-auto">
+            <div class="d-lg-none p-3 border-bottom border-secondary border-opacity-10 d-flex justify-content-between align-items-center bg-dark sticky-top">
+                <span class="fw-bold text-cyan">PoultryMart</span>
+                <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+            </div>
+
+            <div class="p-4 p-lg-5">
+                <header class="mb-4">
+                    <h2 class="fw-bold mb-1">Inventory Management</h2>
+                    <p class="text-white-50">Track and manage product stock levels</p>
+                </header>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="glass-panel p-4 rounded-4 h-100">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50 small fw-bold">Total Products</span>
+                                <i class="bi bi-box text-cyan"></i>
+                            </div>
+                            <h2 class="fw-bold mb-0">23</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="glass-panel p-4 rounded-4 h-100">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50 small fw-bold">In Stock</span>
+                                <i class="bi bi-check2-circle text-success"></i>
+                            </div>
+                            <h2 class="fw-bold mb-0 text-success">23</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="glass-panel p-4 rounded-4 h-100">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50 small fw-bold">Out of Stock</span>
+                                <i class="bi bi-exclamation-triangle text-danger"></i>
+                            </div>
+                            <h2 class="fw-bold mb-0 text-danger">0</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-4 rounded-4 mb-5">
+                    <h5 class="fw-bold mb-4">Product Inventory</h5>
+                    
+                    <div class="mb-4">
+                        <div class="input-group glass-panel border-0 rounded-3 overflow-hidden">
+                            <span class="input-group-text bg-transparent border-0 text-white-50 ps-3">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" id="inventorySearch" class="form-control bg-transparent border-0 text-white py-2" placeholder="Search products by name or category...">
+                        </div>
+                    </div>
+
+                    <div id="inventoryList" class="d-flex flex-column gap-3">
+                        <div class="bg-dark bg-opacity-25 p-3 rounded-4 border border-secondary border-opacity-10 d-flex align-items-center justify-content-between inventory-item" data-name="Whole Chicken" data-category="Whole Birds">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://placehold.co/60x60/222/cyan?text=Chicken" class="rounded-3" alt="Whole Chicken">
+                                <div>
+                                    <h6 class="fw-bold mb-1">Whole Chicken - Farm Fresh</h6>
+                                    <p class="small text-white-50 mb-0">Whole Birds</p>
+                                    <small class="text-white-50">₱180/kg • Est. 1.2kg</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3">In Stock</span>
+                                <button class="btn btn-outline-light border-secondary border-opacity-50 rounded-3 px-3 py-1 small">Update Stock</button>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark bg-opacity-25 p-3 rounded-4 border border-secondary border-opacity-10 d-flex align-items-center justify-content-between inventory-item" data-name="Whole Turkey" data-category="Whole Birds">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://placehold.co/60x60/222/cyan?text=Turkey" class="rounded-3" alt="Whole Turkey">
+                                <div>
+                                    <h6 class="fw-bold mb-1">Whole Turkey</h6>
+                                    <p class="small text-white-50 mb-0">Whole Birds</p>
+                                    <small class="text-white-50">₱380/kg • Est. 3.5kg</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3">In Stock</span>
+                                <button class="btn btn-outline-light border-secondary border-opacity-50 rounded-3 px-3 py-1 small">Update Stock</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-4 rounded-4">
+                    <h5 class="fw-bold mb-4">Inventory Management Features</h5>
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="d-flex align-items-start gap-3">
+                                <i class="bi bi-check2-circle text-cyan"></i>
+                                <p class="mb-0"><span class="fw-bold">Stock Level Tracking:</span> Monitor available quantities for each product</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start gap-3">
+                                <i class="bi bi-check2-circle text-cyan"></i>
+                                <p class="mb-0"><span class="fw-bold">Batch Inventory Tracking:</span> Track product batches with arrival dates</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start gap-3">
+                                <i class="bi bi-check2-circle text-cyan"></i>
+                                <p class="mb-0"><span class="fw-bold">FIFO Dispatch Support:</span> First-In-First-Out system ensures oldest stock is used first</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start gap-3">
+                                <i class="bi bi-exclamation-triangle text-white-50"></i>
+                                <p class="mb-0"><span class="fw-bold">Low Stock Alerts:</span> Automatic notifications when stock levels are low</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/dashboard-logic.js"></script>
+    
+    <script>
+        // Simple search logic for inventory items
+        document.getElementById('inventorySearch').addEventListener('keyup', function() {
+            const searchTerm = this.value.toLowerCase();
+            const items = document.querySelectorAll('.inventory-item');
+
+            items.forEach(item => {
+                const name = item.getAttribute('data-name').toLowerCase();
+                const category = item.getAttribute('data-category').toLowerCase();
+                
+                if (name.includes(searchTerm) || category.includes(searchTerm)) {
+                    item.classList.remove('d-none');
+                    item.classList.add('d-flex');
+                } else {
+                    item.classList.remove('d-flex');
+                    item.classList.add('d-none');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

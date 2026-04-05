@@ -1,0 +1,499 @@
+/* ========================================
+   1. GLOBAL & CORE STYLES
+========================================
+*/
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #0d2b3f, #081a29 60%);
+  color: #ffffff;
+}
+
+.italic { font-style: italic; }
+
+.bg-cyan { background-color: #00e5ff; }
+
+.text-cyan { color: #00e5ff; }
+
+hr {
+  border-color: rgba(255,255,255,0.1);
+  margin: 30px 0;
+}
+
+/* ========================================
+   2. NAVIGATION & GLASS EFFECTS
+========================================
+*/
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.glass-panel {
+  background: rgba(11, 30, 52, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 207, 232, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 229, 255, 0.2);
+}
+
+/* Navbar Logo & Brand */
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00d4ff, #00ffa3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #002;
+}
+
+.brand-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Navbar Search */
+.search-wrapper {
+  max-width: 420px;
+  position: relative;
+}
+
+.search-input {
+  background: rgba(255,255,255,0.05);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 40px 10px 15px;
+  color: white;
+}
+
+.search-input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.6);
+}
+
+/* ========================================
+   3. HERO & LANDING SECTIONS
+========================================
+*/
+
+/* Hero Section */
+.hero {
+  padding: 80px 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-desc {
+  margin-top: 20px;
+  color: #a9c1d3;
+  max-width: 500px;
+}
+
+/* Catalog Hero Variation */
+.catalog-hero {
+  padding: 80px 20px;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+              url('../images/hero.jpg') center/cover no-repeat;
+  color: #fff;
+}
+
+.catalog-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.catalog-hero p {
+  opacity: 0.85;
+}
+
+/* ========================================
+   4. CARDS & COMPONENTS
+========================================
+*/
+
+/* Generic Image Card */
+.image-card {
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.25);
+  display: inline-block;
+}
+
+.image-card img {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+}
+
+/* Feature Cards */
+#features {
+  background: #0b1e34;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 250px;
+  box-sizing: border-box;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 200, 255, 0.2);
+}
+
+.feature-card .icon {
+  font-size: 2rem;
+  color: #00d1ff;
+  background: rgba(0, 209, 255, 0.1);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* Shop Category Grid */
+#shop-category {
+  background: #0b1e34;
+  color: #ffffff;
+  padding: 60px 20px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+/* Featured Product Card */
+#featured-products {
+  background: linear-gradient(180deg, #061a26, #04121a);
+  color: #fff;
+}
+
+.product-card {
+  background: #0b2230;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover { transform: translateY(-5px); }
+
+.product-img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-img .badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.price { color: #00e5ff; font-weight: bold; }
+
+.price-card { border-left: 4px solid #00e5ff; }
+
+/* ========================================
+   5. BUTTONS & CALL TO ACTION
+========================================
+*/
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Primary Cyan Button */
+.btn-cyan {
+  background: linear-gradient(135deg, #00b7ffe0, #00aaffc3);
+  border: none;
+  color: #002;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+/* Transparent Glass Button */
+.btn-glass {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 12px;
+  padding: 12px 22px;
+}
+
+/* Outline Cyan Button */
+.btn-outline-cyan {
+  border: 1px solid #00e5ff;
+  color: #00e5ff;
+}
+
+.btn-outline-cyan:hover {
+  background: #00e5ff;
+  color: #000;
+}
+
+/* CTA Section Styles */
+#cta {
+  background: linear-gradient(90deg, #00cfe8, #0a6c80);
+  padding: 70px 20px;
+  color: #fff;
+}
+
+.btn-cta {
+  background: transparent;
+  color: #e6f7fb;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  padding: 14px 32px;
+  border-radius: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.btn-cta:active { transform: scale(0.97); }
+
+/* ========================================
+   6. FORMS & AUTHENTICATION
+========================================
+*/
+
+.login-input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  border-radius: 8px;
+}
+
+.login-input::placeholder {
+  color: white !important;
+  opacity: 0.10;
+}
+
+.login-input:focus {
+  border-color: #00e5ff !important;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.auth-tab {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding-bottom: 5px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+  color: #00e5ff;
+  border-bottom: 3px solid #00e5ff;
+}
+
+.shadow-glow { box-shadow: 0 0 15px rgba(0, 229, 255, 0.4); }
+
+.custom-radio {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.custom-radio.active {
+  border-color: #00e5ff;
+  background: rgba(0, 229, 255, 0.05);
+}
+
+/* ========================================
+   7. DASHBOARD & SIDEBAR
+========================================
+*/
+
+.rider-nav-link {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 12px 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+.rider-nav-link.active {
+  background: rgba(0, 229, 255, 0.1);
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+.stat-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.border-dashed { border-style: dashed !important; }
+.bg-dark-card { background: #0b1118 !important; }
+
+/* ========================================
+   8. FOOTER
+========================================
+*/
+
+#footer {
+  background: #071c2b;
+  color: #cfd8dc;
+}
+
+.footer-links { list-style: none; padding: 0; }
+.footer-links a { color: #cfd8dc; text-decoration: none; transition: 0.2s; }
+.footer-links a:hover { color: #00e5ff; }
+
+.socials i { font-size: 1.2rem; margin-right: 10px; cursor: pointer; transition: 0.2s; }
+.socials i:hover { color: #00e5ff; }
+
+/* ========================================
+   9. RESPONSIVE DESIGN (MEDIA QUERIES)
+========================================
+*/
+
+/* Desktop & Large Tablet */
+@media (min-width: 992px) {
+  .hero-title { font-size: 3.5rem; }
+}
+
+@media (min-width: 768px) {
+  .hero-title { font-size: 3rem; }
+}
+
+/* Tablets & Below */
+@media (max-width: 1024px) {
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar-wrapper { width: 280px !important; background: #0b1118; }
+  .menu-btn-mobile { display: block; color: #00e5ff !important; background: rgba(255, 255, 255, 0.05); }
+  main { padding-top: 0 !important; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .product-img { height: 180px; }
+  .cta-title { font-size: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .category-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+  .hero-buttons a { width: 100%; text-align: center; }
+  .search-wrapper { width: 100%; }
+  .product-img { height: 160px; }
+  .login-card { padding: 1.5rem !important; }
+}
+
+/* Browser Specific Fixes */
+select.login-input {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg);
+}

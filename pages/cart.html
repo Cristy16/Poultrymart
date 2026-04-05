@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | PoultryMart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body class="bg-dark text-white d-flex flex-column min-vh-100">
+
+    <div id="navbar"></div>
+
+    <main class="container py-5 flex-grow-1">
+        <h1 class="fw-bold mb-5">Shopping Cart</h1>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div id="cart-items-container">
+                    </div>
+
+                <a href="catalog.html" class="btn btn-outline-light rounded-pill px-4 mt-4">
+                    Continue Shopping
+                </a>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="glass-panel p-4 rounded-4 shadow-sm sticky-top" style="top: 100px;">
+                    <h5 class="fw-bold mb-4">Order Summary</h5>
+                    
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-white">Estimated Subtotal</span>
+                        <span class="text-white" class="fw-bold">₱0.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-white">Delivery Fee</span>
+                        <span class="fw-bold">₱50.00</span>
+                    </div>
+                    <p class="small text-white mb-4">Add ₱228.00 more for free delivery</p>
+
+                    <hr class="border-secondary opacity-25">
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <span class="d-block fw-bold fs-5">Estimated Total</span>
+                            <small class="text-white-50 italic" style="font-size: 0.7rem;">*Final total based on actual weight</small>
+                        </div>
+                        <span id="total" class="fs-4 fw-bold text-cyan">₱0.00</span>
+                    </div>
+
+                    <a href="checkout.html" class="btn btn-cyan w-100 py-3 fw-bold rounded-3 shadow-glow">
+                        Proceed to Checkout <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+
+                    <div class="mt-4 p-3 rounded-4" style="background: rgba(0, 207, 232, 0.05); border: 1px solid rgba(0, 207, 232, 0.2);">
+                        <h6 class="small fw-bold text-white mb-2">Catch-Weight Pricing</h6>
+                        <p class="small text-white-50 mb-0">
+                            Prices shown are estimates. You'll be charged based on the actual weight measured during packing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        fetch("../components/navbar.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+                if (typeof updateCartBadge === "function") updateCartBadge();
+            });
+
+        fetch("../components/footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            });
+
+        document.addEventListener('DOMContentLoaded', renderCartPage);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', renderCartPage);
+    </script>
+</body>
+</html>
