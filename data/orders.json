@@ -1,0 +1,34 @@
+[
+    {
+        "id": "PM-2026-001",
+        "customer": "Juan Dela Cruz",
+        "date": "2026-04-05T14:30:00",
+        "total": 465.00,
+        "status": "completed",
+        "items": ["Whole Chicken", "Egg Tray"]
+    },
+    {
+        "id": "PM-2026-002",
+        "customer": "Maria Clara",
+        "date": "2026-04-05T16:15:00",
+        "total": 291.20,
+        "status": "out-for-delivery",
+        "items": ["Chicken Breast"]
+    },
+    {
+        "id": "PM-2026-003",
+        "customer": "Simoun Ibarra",
+        "date": "2026-04-05T10:00:00",
+        "total": 1200.00,
+        "status": "pending",
+        "items": ["Prime Feed 50kg"]
+    },
+    {
+        "id": "PM-DEBUG-999",
+        "customer": "Tester Bot",
+        "date": "2026-04-05T22:00:00",
+        "total": 10.00,
+        "status": "pending",
+        "items": ["Sample Item"]
+    }
+]
